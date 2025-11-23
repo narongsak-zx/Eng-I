@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สรุปสอบ Units 7 & 9 (ฉบับสมบูรณ์ + แบบฝึกหัด)</title>
+    <title>สรุปสอบ Units 7 & 9 (ฉบับสมบูรณ์)</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -22,13 +22,15 @@
             padding: 20px;
             border-radius: 10px;
             border-bottom: 4px solid #3498db;
+            margin-bottom: 30px;
         }
         h2 {
             background-color: #2980b9;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 8px;
             margin-top: 40px;
+            font-size: 1.4em;
         }
         h3 {
             color: #d35400;
@@ -36,15 +38,16 @@
             padding-left: 15px;
             margin-top: 30px;
             background-color: #fff;
-            padding: 8px;
+            padding: 10px;
             border-radius: 0 5px 5px 0;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 3px rgba(0,0,0,0.05);
         }
         ul, ol {
             background-color: white;
             padding: 20px 40px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-top: 10px;
         }
         li {
             margin-bottom: 8px;
@@ -53,143 +56,166 @@
             font-weight: bold;
             color: #c0392b;
             background-color: #fdedec;
-            padding: 0 5px;
-            border-radius: 3px;
+            padding: 0 6px;
+            border-radius: 4px;
         }
         .translation {
             color: #7f8c8d;
             font-size: 0.9em;
-            margin-left: 5px;
+            margin-left: 8px;
         }
+        /* Style สำหรับส่วน Quiz */
         .quiz-section {
             background-color: #e8f8f5;
             border: 2px solid #1abc9c;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
             margin-top: 50px;
         }
+        .quiz-header {
+            text-align: center;
+            color: #16a085;
+            margin-top: 0;
+            border-bottom: 2px dashed #16a085;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
         .quiz-question {
             font-weight: bold;
-            margin-top: 15px;
-            color: #16a085;
+            margin-top: 20px;
+            color: #0e6251;
+            font-size: 1.1em;
         }
         .options {
-            margin-left: 20px;
-            list-style-type: none;
-            padding-left: 0;
+            list-style-type: none; /* เอาจุด bullet ออกสำหรับตัวเลือก */
+            padding-left: 10px;
         }
-        .answer-key {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            display: none; /* ซ่อนเฉลยไว้ก่อน */
+        .options li {
+            background-color: rgba(255,255,255,0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
         }
+        /* ปุ่มเฉลย */
         .btn-toggle {
             background-color: #e74c3c;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.1em;
+            font-weight: bold;
             display: block;
-            margin: 20px auto;
+            margin: 30px auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
         }
         .btn-toggle:hover {
             background-color: #c0392b;
+        }
+        .answer-key {
+            background-color: #34495e;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none; /* ซ่อนไว้ก่อน */
+        }
+        .answer-key ol {
+            background-color: transparent;
+            box-shadow: none;
+            color: #ecf0f1;
         }
     </style>
 </head>
 <body>
 
-    <h1>📚 สรุปสอบภาษาอังกฤษ Units 7 & 9</h1>
-    <p style="text-align: center;"><strong>หัวข้อสอบ:</strong> Vocab, Grammar, Dialogue, Reading</p>
+    <h1>📚 สรุปเข้ม Units 7 & 9 (พร้อมสอบ)</h1>
+    <p style="text-align: center; color: #555;">รวบรวม Vocab, Grammar, Dialogue, Reading และแบบฝึกหัด</p>
 
     <h2>Unit 7: Now is Good</h2>
 
     <h3>1. Vocab: กิจกรรมในบ้าน (Activities)</h3>
     <ul>
         <li><span class="highlight">clean</span> the kitchen <span class="translation">(ทำความสะอาดครัว)</span></li>
-        [span_1](start_span)[span_2](start_span)<li><span class="highlight">cook</span> dinner / breakfast <span class="translation">(ทำอาหารเย็น/เช้า)</span>[span_1](end_span)[span_2](end_span)</li>
-        [span_3](start_span)<li><span class="highlight">wash</span> my hair <span class="translation">(สระผม)</span>[span_3](end_span)</li>
-        [span_4](start_span)[span_5](start_span)<li><span class="highlight">brush</span> my teeth <span class="translation">(แปรงฟัน)</span>[span_4](end_span)[span_5](end_span)</li>
-        [span_6](start_span)[span_7](start_span)<li><span class="highlight">do</span> the dishes <span class="translation">(ล้างจาน)</span>[span_6](end_span)[span_7](end_span)</li>
-        [span_8](start_span)<li><span class="highlight">take</span> a bath / a shower <span class="translation">(อาบน้ำ)</span>[span_8](end_span)</li>
-        [span_9](start_span)<li><span class="highlight">do</span> my homework <span class="translation">(ทำการบ้าน)</span>[span_9](end_span)</li>
-        [span_10](start_span)<li><span class="highlight">help</span> my daughters/son <span class="translation">(ช่วยลูก)</span>[span_10](end_span)</li>
+        <li><span class="highlight">cook</span> dinner / breakfast <span class="translation">(ทำอาหารเย็น/เช้า)</span></li>
+        <li><span class="highlight">wash</span> my hair <span class="translation">(สระผม)</span></li>
+        <li><span class="highlight">brush</span> my teeth <span class="translation">(แปรงฟัน)</span></li>
+        <li><span class="highlight">do</span> the dishes <span class="translation">(ล้างจาน)</span></li>
+        <li><span class="highlight">take</span> a bath / a shower <span class="translation">(อาบน้ำ)</span></li>
+        <li><span class="highlight">do</span> my homework <span class="translation">(ทำการบ้าน)</span></li>
+        <li><span class="highlight">help</span> my daughters/son <span class="translation">(ช่วยลูก)</span></li>
     </ul>
 
     <h3>2. Vocab: การเดินทาง (Transportation)</h3>
     <ul>
-        [span_11](start_span)<li><span class="highlight">take</span> the bus / train / subway <span class="translation">(ขึ้นรถเมล์/รถไฟ...)</span>[span_11](end_span)</li>
-        [span_12](start_span)<li><span class="highlight">ride</span> your/my bike <span class="translation">(ขี่จักรยาน)</span>[span_12](end_span)</li>
-        [span_13](start_span)<li><span class="highlight">drive</span> <span class="translation">(ขับรถ)</span>[span_13](end_span)</li>
-        [span_14](start_span)<li><span class="highlight">walk</span> <span class="translation">(เดิน)</span>[span_14](end_span)</li>
-        [span_15](start_span)<li><span class="highlight">carry</span> a bag <span class="translation">(ถือกระเป๋า)</span>[span_15](end_span)</li>
-        [span_16](start_span)<li><span class="highlight">wait</span> (at the bus stop) <span class="translation">(รอที่ป้ายรถ)</span>[span_16](end_span)</li>
+        <li><span class="highlight">take</span> the bus / train / subway <span class="translation">(ขึ้นรถเมล์/รถไฟ...)</span></li>
+        <li><span class="highlight">ride</span> your/my bike <span class="translation">(ขี่จักรยาน)</span></li>
+        <li><span class="highlight">drive</span> <span class="translation">(ขับรถ)</span></li>
+        <li><span class="highlight">walk</span> <span class="translation">(เดิน)</span></li>
+        <li><span class="highlight">carry</span> a bag <span class="translation">(ถือกระเป๋า)</span></li>
+        <li><span class="highlight">wait</span> (at the bus stop) <span class="translation">(รอที่ป้ายรถ)</span></li>
     </ul>
 
     <h3>3. Grammar: Present Continuous (สิ่งที่กำลังทำ)</h3>
     <ul>
-        [span_17](start_span)<li>I <span class="highlight">'m cooking</span> breakfast right now.[span_17](end_span)</li>
-        [span_18](start_span)<li>Stevie <span class="highlight">isn't drinking</span> his milk.[span_18](end_span)</li>
-        [span_19](start_span)<li><strong>Q:</strong> <span class="highlight">Are</span> you <span class="highlight">going</span> to work?[span_19](end_span)</li>
-        [span_20](start_span)<li><strong>Q:</strong> <span class="highlight">Why</span> is he <span class="highlight">carrying</span> a plant?[span_20](end_span)</li>
-        [span_21](start_span)<li><em>Example:</em> "I'm <span class="highlight">taking the bus</span> because I'm <span class="highlight">carrying</span> a big plant."[span_21](end_span)</li>
+        <li>I <span class="highlight">'m cooking</span> breakfast right now.</li>
+        <li>Stevie <span class="highlight">isn't drinking</span> his milk.</li>
+        <li><strong>Question:</strong> <span class="highlight">Are</span> you <span class="highlight">going</span> to work?</li>
+        <li><strong>Question:</strong> <span class="highlight">Why</span> is he <span class="highlight">carrying</span> a plant?</li>
+        <li><em>Example:</em> "I'm <span class="highlight">taking the bus</span> because I'm <span class="highlight">carrying</span> a big plant."</li>
     </ul>
 
     <h3>4. Dialogue & Reading</h3>
     <ul>
-        <li><strong>Phone:</strong> "Hi, Ariana. <span class="highlight">It's</span> David." [span_22](start_span)<span class="translation">(นี่เดวิดนะ)</span>[span_22](end_span)</li>
-        [span_23](start_span)<li><strong>Check:</strong> "Is this a <span class="highlight">good time</span> to call?"[span_23](end_span)</li>
-        [span_24](start_span)<li><strong>Refuse:</strong> "Sorry... This <span class="highlight">isn't a good time</span> to talk."[span_24](end_span)</li>
-        <li><strong>Reaction:</strong> "Oh, wow!" (Good), "Oh." (Normal), "Oh, no!" (Bad) [span_25](start_span)</li>
-        <li><strong>Writing:</strong> "They're busy, <span class="highlight">too</span>." (ท้ายประโยค) [span_25](end_span)</li>
-        <li><strong>Writing:</strong> "<span class="highlight">Also</span>, the children are eating." (ต้นประโยค) [span_26](start_span)</li>
+        <li><strong>Phone Greeting:</strong> "Hi, Ariana. <span class="highlight">It's</span> David." <span class="translation">(สวัสดี นี่เดวิดนะ)</span></li>
+        <li><strong>Check Time:</strong> "Is this a <span class="highlight">good time</span> to call?"</li>
+        <li><strong>Rejecting:</strong> "Sorry... This <span class="highlight">isn't a good time</span> to talk."</li>
+        <li><strong>Reacting:</strong> "Oh, wow!" (Good), "Oh." (Normal), "Oh, no!" (Bad)</li>
+        <li><strong>Writing (Too):</strong> "They're busy, <span class="highlight">too</span>." (วางท้ายประโยค)</li>
+        <li><strong>Writing (Also):</strong> "<span class="highlight">Also</span>, the children are eating." (วางต้นประโยค)</li>
     </ul>
 
     <h2>Unit 9: Places to Go</h2>
 
     <h3>1. Vocab: ท่องเที่ยว & การจัดการ (Travel)</h3>
     <ul>
-        <li><strong>Words:</strong> ticket, tour, vacation, boat, plane, farm, ranch[span_26](end_span)</li>
-        [span_27](start_span)<li><span class="highlight">stay</span> in a hotel[span_27](end_span)</li>
-        [span_28](start_span)<li><span class="highlight">arrive</span> at the airport[span_28](end_span)</li>
-        [span_29](start_span)<li><span class="highlight">check in</span> at the airport[span_29](end_span)</li>
-        [span_30](start_span)<li><span class="highlight">leave</span> your house <span class="translation">(ออกจากบ้าน)</span>[span_30](end_span)</li>
-        [span_31](start_span)<li><span class="highlight">buy</span> tickets online[span_31](end_span)</li>
-        [span_32](start_span)<li><em>Example:</em> "San Diego, here I come! I have my <span class="highlight">ticket</span> and my <span class="highlight">seat</span>."[span_32](end_span)</li>
+        <li><strong>Words:</strong> ticket, tour, vacation, boat, plane, farm, ranch</li>
+        <li><span class="highlight">stay</span> in a hotel <span class="translation">(พักโรงแรม)</span></li>
+        <li><span class="highlight">arrive</span> at the airport <span class="translation">(ถึงสนามบิน)</span></li>
+        <li><span class="highlight">check in</span> at the airport <span class="translation">(เช็คอิน)</span></li>
+        <li><span class="highlight">leave</span> your house <span class="translation">(ออกจากบ้าน)</span></li>
+        <li><span class="highlight">buy</span> tickets online <span class="translation">(ซื้อตั๋วออนไลน์)</span></li>
+        <li><em>Example:</em> "San Diego, here I come! I have my <span class="highlight">ticket</span> and my <span class="highlight">seat</span>."</li>
     </ul>
 
     <h3>2. Grammar: This/These & Verb+to</h3>
     <ul>
-        [span_33](start_span)<li><span class="highlight">This</span> ticket (เอกพจน์/ใกล้) vs <span class="highlight">These</span> birds (พหูพจน์/ใกล้)[span_33](end_span)</li>
-        <li>I <span class="highlight">like to</span> fly. [span_34](start_span)<span class="translation">(ชอบที่จะ...)</span>[span_34](end_span)</li>
-        <li>We <span class="highlight">want to</span> leave on Friday. [span_35](start_span)<span class="translation">(อยากที่จะ...)</span>[span_35](end_span)</li>
-        [span_36](start_span)<li>You <span class="highlight">need to</span> check in. <span class="translation">(จำเป็นต้อง...)</span>[span_36](end_span)</li>
-        <li>He <span class="highlight">has to</span> buy tickets. [span_37](start_span)<span class="translation">(ต้องทำ...)</span>[span_37](end_span)</li>
-        <li><strong>Note:</strong> ตามด้วย Verb ช่อง 1 เสมอ (ห้ามเติม -ing)</li>
+        <li><span class="highlight">This</span> ticket (เอกพจน์/ใกล้) vs <span class="highlight">These</span> birds (พหูพจน์/ใกล้)</li>
+        <li>I <span class="highlight">like to</span> fly. <span class="translation">(ชอบที่จะ...)</span></li>
+        <li>We <span class="highlight">want to</span> leave on Friday. <span class="translation">(อยากที่จะ...)</span></li>
+        <li>You <span class="highlight">need to</span> check in. <span class="translation">(จำเป็นต้อง...)</span></li>
+        <li>He <span class="highlight">has to</span> buy tickets. <span class="translation">(ต้องทำ...)</span></li>
+        <li><strong>Important:</strong> ตามด้วย Verb ช่อง 1 เสมอ (ห้ามเติม -ing, ห้ามเติม s)</li>
     </ul>
 
     <h3>3. Dialogue & Reading</h3>
     <ul>
-        <li><strong>Store:</strong> "How much is that?" [span_38](start_span)[span_39](start_span)/ "Where are the travel guides?"[span_38](end_span)[span_39](end_span)</li>
-        [span_40](start_span)<li><strong>Promo:</strong> "They're <span class="highlight">two for $15</span>."[span_40](end_span)</li>
-        [span_41](start_span)<li><strong>Repeat:</strong> "Sorry, can you <span class="highlight">say that again</span>?"[span_41](end_span)</li>
-        <li><strong>Imperatives (คำแนะนำ):</strong>
+        <li><strong>Store Question:</strong> "How much is that?" / "Where are the travel guides?"</li>
+        <li><strong>Store Promo:</strong> "They're <span class="highlight">two for $15</span>." <span class="translation">(2 อัน 15 ดอลลาร์)</span></li>
+        <li><strong>Repeat:</strong> "Sorry, can you <span class="highlight">say that again</span>?"</li>
+        <li><strong>Imperatives (คำแนะนำ):</strong> ขึ้นต้นด้วยกริยาเลย
             <ul>
-                [span_42](start_span)<li><span class="highlight">Walk</span> to the top of the island.[span_42](end_span)</li>
-                [span_43](start_span)<li><span class="highlight">Don't take</span> a tour.[span_43](end_span)</li>
-                [span_44](start_span)<li><span class="highlight">Don't forget</span> your camera.[span_44](end_span)</li>
+                <li><span class="highlight">Walk</span> to the top of the island.</li>
+                <li><span class="highlight">Don't take</span> a tour.</li>
+                <li><span class="highlight">Don't forget</span> your camera.</li>
             </ul>
         </li>
     </ul>
 
     <div class="quiz-section">
-        <h2 style="text-align: center; margin-top: 0; background: none; color: #16a085;">📝 Practice Quiz (10 ข้อ)</h2>
-        <p style="text-align: center;">ลองทำก่อนดูเฉลยนะครับ</p>
+        <h2 class="quiz-header">📝 Practice Quiz (10 ข้อ)</h2>
         
         <div class="quiz-question">1. Complete the sentence: "I am ______ the dishes in the kitchen."</div>
         <ul class="options">
@@ -265,23 +291,24 @@
     <button class="btn-toggle" onclick="toggleAnswer()">เฉลยคำตอบ (Click to Show Answers)</button>
 
     <div id="answerKey" class="answer-key">
-        <h3 style="color: #f1c40f; border-left: none; background: none; margin-top: 0;">✅ เฉลย (Answer Key)</h3>
+        <h3 style="color: #f1c40f; border-left: none; background: none; margin-top: 0; text-align: center;">✅ เฉลย (Answer Key)</h3>
         <ol>
-            <li><strong>a) doing</strong> (do the dishes = ล้างจาน)</li>
-            <li><strong>c) Are</strong> (ใช้ Are กับ You ใน Present Continuous)</li>
-            <li><strong>b) too</strong> (Too วางท้ายประโยค แปลว่า ด้วย)</li>
-            <li><strong>a) check in</strong> (ต้อง check in ที่สนามบิน)</li>
-            <li><strong>c) these</strong> (Pictures เติม s = พหูพจน์ ใช้ these)</li>
+            <li><strong>a) doing</strong> (สำนวน do the dishes = ล้างจาน)</li>
+            <li><strong>c) Are</strong> (ประธาน You ใช้ Are ใน Present Continuous)</li>
+            <li><strong>b) too</strong> (Too วางท้ายประโยค แปลว่า "ด้วย/เหมือนกัน")</li>
+            <li><strong>a) check in</strong> (ต้อง check in ที่สนามบินก่อนขึ้นเครื่อง)</li>
+            <li><strong>c) these</strong> (Pictures มี s เป็นพหูพจน์และอยู่ใกล้ ใช้ these)</li>
             <li><strong>a) has to</strong> (She เป็นเอกพจน์ ใช้ has to)</li>
-            <li><strong>b) vacation</strong> (นอนโรงแรมตอนไปเที่ยววันหยุด)</li>
-            <li><strong>b) "No, I'm having dinner."</strong> (ปฏิเสธอย่างสุภาพ)</li>
+            <li><strong>b) vacation</strong> (ไปพักโรงแรมในช่วง vacation วันหยุด)</li>
+            <li><strong>b) "No, I'm having dinner."</strong> (ปฏิเสธอย่างสุภาพว่าไม่ว่าง)</li>
             <li><strong>b) "Sorry, can you say that again?"</strong> (ขอให้พูดซ้ำ)</li>
-            <li><strong>b) "Don't forget your camera."</strong> (ประโยคคำสั่ง/แนะนำ)</li>
+            <li><strong>b) "Don't forget your camera."</strong> (ประโยคคำสั่ง Don't + V1)</li>
         </ol>
     </div>
 
-    <div style="text-align: center; margin-top: 40px; color: #7f8c8d;">
-        Good luck! ขอให้ทำข้อสอบได้คะแนนเต็มนะครับ 🍀
+    <div style="text-align: center; margin-top: 50px; padding-bottom: 20px; color: #7f8c8d;">
+        Good luck with your exam! 🍀<br>
+        (Created by Gemini)
     </div>
 
     <script>
@@ -291,7 +318,6 @@
                 x.style.display = "none";
             } else {
                 x.style.display = "block";
-                // เลื่อนหน้าจอลงไปที่เฉลย
                 x.scrollIntoView({behavior: "smooth"});
             }
         }
