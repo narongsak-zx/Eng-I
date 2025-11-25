@@ -2,191 +2,217 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENG Class Review - Clean Pink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ENG Class Review - Mobile Friendly</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         /* --- Theme Settings --- */
         :root {
-            --primary-pink: #db2777;       /* สีหลัก */
-            --soft-pink-bg: #fff0f5;       /* พื้นหลังอ่อนๆ */
+            --primary-pink: #db2777;       
+            --soft-pink-bg: #fff0f5;       
             --text-main: #333;
             --accent-border: #be185d;      
             --highlight-bg: #fce7f3;       
             --highlight-text: #9d174d;     
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         
         body {
             font-family: 'Poppins', 'Sarabun', sans-serif;
-            background-color: #fffbfd; /* พื้นหลังขาวอมชมพูจางมากๆ */
+            background-color: #fffbfd; 
             color: var(--text-main);
             line-height: 1.6;
+            /* ป้องกันการเด้งของหน้าจอใน iOS */
+            overscroll-behavior-y: none;
         }
 
         /* --- Header --- */
         header {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px); /* เบลอพื้นหลังนิดๆ ให้ดูโมเดิร์น */
             border-bottom: 1px solid #f3f4f6;
-            padding: 0 20px;
+            padding: 0 15px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            height: 70px;
+            height: 60px; /* ลดความสูงในมือถือ */
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .logo {
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #444;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
+            flex-shrink: 0; /* ไม่ให้โลโก้หด */
         }
         .logo span { color: var(--primary-pink); }
 
-        /* --- Navigation Menu (Rounded Blocks) --- */
-        nav { overflow-x: auto; scrollbar-width: none; }
+        /* --- Navigation Menu (Horizontal Scroll) --- */
+        nav { 
+            overflow-x: auto; 
+            scrollbar-width: none; 
+            margin-left: 15px;
+            -webkit-overflow-scrolling: touch; /* เลื่อนลื่นๆ ใน iOS */
+            mask-image: linear-gradient(to right, transparent, black 10px, black 90%, transparent); /* ไล่เฟดหัวท้าย */
+        }
         nav::-webkit-scrollbar { display: none; }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 8px;
-            padding: 0 10px;
+            padding: 0 5px; /* เผื่อที่ให้เงา */
         }
 
         nav a {
             text-decoration: none;
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 10px; /* ความมนแบบสี่เหลี่ยม (Rounded Rect) */
+            padding: 6px 14px;
+            border-radius: 8px;
             white-space: nowrap;
             transition: all 0.2s ease;
+            background-color: #f9fafb;
+            border: 1px solid transparent;
         }
 
-        /* Hover Effect */
-        nav a:hover {
-            background-color: #fff0f5;
-            color: var(--primary-pink);
-        }
-
-        /* Active State (ปุ่มที่เลือก) */
+        /* Active State */
         nav a.active {
-            background-color: var(--primary-pink); /* พื้นหลังสีชมพู */
-            color: white; /* ตัวหนังสือสีขาว */
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(219, 39, 119, 0.25); /* เงาสีชมพู */
+            background-color: var(--primary-pink);
+            color: white;
+            box-shadow: 0 2px 8px rgba(219, 39, 119, 0.3);
+            border-color: var(--primary-pink);
         }
 
         /* --- Content Area --- */
         .container {
             max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 20px auto; /* ลดระยะห่างบนล่าง */
+            padding: 0 15px;
             min-height: 80vh;
         }
 
         .content-card {
             background-color: #fff;
             border-radius: 16px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* เงาเบาๆ */
+            padding: 30px 20px; /* ลด padding ให้เหมาะกับมือถือ */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             border: 1px solid #fdf2f8;
         }
 
         .hidden-content { display: none; }
 
-        /* --- Typography & Lists --- */
+        /* --- Typography & Elements --- */
         h1.unit-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem; /* ลดขนาดหัวข้อ */
             color: var(--primary-pink);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
 
-        p.subtitle { color: #888; font-size: 1rem; margin-bottom: 20px; }
+        p.subtitle { 
+            color: #777; 
+            font-size: 0.9rem; 
+            margin-bottom: 20px; 
+        }
         
         .divider {
-            border-bottom: 1px solid #eee;
-            margin: 20px 0 30px 0;
+            border-bottom: 1px dashed #eee;
+            margin: 20px 0;
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #444;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-left: 12px;
-            border-left: 4px solid var(--accent-border);
+            margin-top: 25px;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 3px solid var(--accent-border);
         }
 
-        /* List Style (Simple Dot) */
         ul.list {
             list-style: none;
-            padding-left: 8px;
+            padding-left: 5px;
         }
         ul.list li {
             margin-bottom: 10px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 18px;
+            font-size: 0.95rem;
         }
-        /* จุดกลมธรรมดาสบายตา */
         ul.list li::before {
             content: "";
-            width: 6px;
-            height: 6px;
-            background-color: #db2777; /* สีชมพู */
+            width: 5px;
+            height: 5px;
+            background-color: #db2777;
             border-radius: 50%;
             position: absolute;
             left: 0;
-            top: 10px; /* จัดกึ่งกลางบรรทัด */
+            top: 9px;
         }
 
-        /* Grammar Box */
         .grammar-box {
             background-color: #fdf4f9;
-            padding: 15px 20px;
+            padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid #db2777;
+            border-left: 3px solid #db2777;
             margin: 15px 0;
             color: #831843;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        /* Highlights */
         .hl {
             background-color: var(--highlight-bg);
             color: var(--highlight-text);
-            padding: 2px 6px;
+            padding: 1px 5px;
             border-radius: 4px;
             font-weight: 600;
         }
 
-        /* Chat Box */
         .chat-box {
             background-color: #fafafa;
-            border: 1px solid #eee;
+            border: 1px solid #f0f0f0;
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px;
             margin-top: 15px;
+            font-size: 0.95rem;
         }
-        .chat-row { margin-bottom: 8px; }
-        .speaker { font-weight: 700; color: var(--primary-pink); margin-right: 8px; }
+        .chat-row { margin-bottom: 10px; }
+        .speaker { 
+            font-weight: 700; 
+            color: var(--primary-pink); 
+            display: block; /* ในมือถือให้ชื่อคนพูดอยู่คนละบรรทัดกับเนื้อหา หรือ inline ก็ได้ */
+            margin-bottom: 2px;
+            font-size: 0.85rem;
+        }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 30px 10px;
             color: #bbb;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (min-width: 768px) {
+            /* ปรับกลับเป็นแบบจอใหญ่เมื่อเปิดใน iPad/PC */
+            .container { margin: 40px auto; }
+            .content-card { padding: 50px; }
+            h1.unit-title { font-size: 1.8rem; }
+            .speaker { display: inline; margin-bottom: 0; margin-right: 8px; }
+            header { padding: 0 30px; height: 70px; }
+            nav { margin-left: 0; }
         }
     </style>
 </head>
@@ -194,8 +220,8 @@
 
     <header>
         <div class="logo">
-            <span style="font-size:1.5rem;">📚</span> 
-            <span>ENG</span> I
+            <span style="font-size:1.4rem;">📚</span> 
+            <span>ENG I</span>
         </div>
         <nav>
             <ul>
@@ -224,19 +250,19 @@
         <div class="divider"></div>
 
         <h2>1. Vocabulary (คำศัพท์น่ารู้)</h2>
-        <p><strong>Activities around the house (กิจกรรมในบ้าน)</strong></p>
+        <p><strong>Activities around the house</strong></p>
         <ul class="list">
-            <li><span class="hl">clean the kitchen</span> : ทำความสะอาดห้องครัว</li>
+            <li><span class="hl">clean the kitchen</span> : ทำความสะอาดครัว</li>
             <li><span class="hl">cook dinner</span> : ทำอาหารเย็น</li>
             <li><span class="hl">do the dishes</span> : ล้างจาน</li>
             <li><span class="hl">wash my hair</span> : สระผม</li>
             <li><span class="hl">brush my teeth</span> : แปรงฟัน</li>
-            <li><span class="hl">take a shower</span> : อาบน้ำ (ฝักบัว)</li>
+            <li><span class="hl">take a shower</span> : อาบน้ำ</li>
         </ul>
         
-        <p style="margin-top:20px;"><strong>Transportation (การเดินทาง)</strong></p>
+        <p style="margin-top:20px;"><strong>Transportation</strong></p>
         <ul class="list">
-            <li><span class="hl">take the bus / train / subway</span> : ขึ้นรถเมล์ / รถไฟ / รถไฟใต้ดิน</li>
+            <li><span class="hl">take the bus / train</span> : ขึ้นรถเมล์ / รถไฟ</li>
             <li><span class="hl">ride a bike</span> : ขี่จักรยาน</li>
             <li><span class="hl">drive</span> : ขับรถ</li>
             <li><span class="hl">walk</span> : เดิน</li>
@@ -245,49 +271,43 @@
         </ul>
 
         <h2>2. Grammar: Present Continuous</h2>
-        <p>ใช้พูดถึงสิ่งที่<strong>กำลังเกิดขึ้นในขณะนี้</strong> (Right now) หรือช่วงนี้ (Around now)</p>
+        <p>ใช้พูดถึงสิ่งที่<strong>กำลังทำอยู่ ณ ตอนนี้</strong></p>
         
         <div class="grammar-box">
-            Structure: Subject + is / am / are + Verb-ing
+            S + is / am / are + Verb-ing
         </div>
 
         <ul class="list">
-            <li>I <span class="hl">'m cooking</span> breakfast right now. (ฉันกำลังทำอาหารเช้าอยู่ตอนนี้)</li>
-            <li>She <span class="hl">isn't drinking</span> milk. (เธอไม่ได้กำลังดื่มนม)</li>
-            <li>They <span class="hl">are learning</span> a lot this year. (พวกเขากำลังเรียนรู้เยอะมากปีนี้)</li>
+            <li>I <span class="hl">'m cooking</span>. (ฉันกำลังทำอาหาร)</li>
+            <li>She <span class="hl">isn't drinking</span> milk. (เธอไม่ได้ดื่มนม)</li>
+            <li>They <span class="hl">are learning</span>. (พวกเขากำลังเรียน)</li>
         </ul>
 
-        <p><strong>Questions (ประโยคคำถาม)</strong></p>
+        <p><strong>Questions</strong></p>
         <ul class="list">
-            <li><strong>Q:</strong> <span class="hl">Are</span> you going to work? (คุณกำลังจะไปทำงานใช่ไหม?) <br> <strong>A:</strong> Yes, I am. / No, I'm not.</li>
-            <li><strong>Q:</strong> <span class="hl">What</span> are you doing? (คุณกำลังทำอะไร?)</li>
-            <li><strong>Q:</strong> <span class="hl">Why</span> is he carrying a plant? (ทำไมเขาถึงถือต้นไม้มา?)</li>
+            <li><strong>Q:</strong> <span class="hl">Are</span> you going to work?</li>
+            <li><strong>Q:</strong> <span class="hl">What</span> are you doing?</li>
+            <li><strong>Q:</strong> <span class="hl">Why</span> is he carrying a plant?</li>
         </ul>
 
         <h2>3. Functional: Phone & News</h2>
-        <p><strong>Phone Calls (การคุยโทรศัพท์)</strong></p>
         <ul class="list">
-            <li><strong>Greeting:</strong> "Hi, [Name]. <span class="hl">It's</span> [Your Name]." (สวัสดี นี่...พูดสายนะ)</li>
-            <li><strong>Checking time:</strong> "Is this a good time to call?" (สะดวกคุยไหม?)</li>
-            <li><strong>Asking update:</strong> "What are you doing these days?" (ช่วงนี้ทำอะไรอยู่บ้าง?)</li>
-        </ul>
-        
-        <p><strong>Reacting to News (การตอบรับข่าวสาร)</strong></p>
-        <ul class="list">
-            <li>😃 Good news: <strong>"Oh, wow!"</strong> (โอ้ว้าว!) - เช่น ได้งานใหม่</li>
-            <li>😐 Ordinary news: <strong>"Oh."</strong> (อ้อ หรอ) - เช่น ยุ่งอยู่</li>
-            <li>😥 Bad news: <strong>"Oh, no!"</strong> (โอ้ ไม่นะ) - เช่น ของแพงมาก</li>
+            <li><strong>Greeting:</strong> "Hi. <span class="hl">It's</span> [Name]."</li>
+            <li><strong>Time check:</strong> "Is this a good time to call?"</li>
+            <li><strong>Reacting:</strong>
+                <br>- ดี: <strong>"Oh, wow!"</strong>
+                <br>- เฉยๆ: <strong>"Oh."</strong>
+                <br>- แย่: <strong>"Oh, no!"</strong>
+            </li>
         </ul>
 
-        <h2>4. Simulation (จำลองสถานการณ์)</h2>
-        <p>ตัวอย่างบทสนทนาทางโทรศัพท์</p>
+        <h2>4. Simulation</h2>
         <div class="chat-box">
-            <div class="chat-row"><span class="speaker">Tom:</span> Hi, Sarah. <span class="hl">It's</span> Tom. <span class="hl">Is this a good time to call?</span></div>
-            <div class="chat-row"><span class="speaker">Sarah:</span> Um, actually, <span class="hl">I'm cooking</span> dinner right now.</div>
-            <div class="chat-row"><span class="speaker">Tom:</span> Oh, sorry. <span class="hl">Are</span> you busy?</div>
-            <div class="chat-row"><span class="speaker">Sarah:</span> A little. <span class="hl">I'm making</span> pasta. But it's okay. <span class="hl">How's it going?</span></div>
-            <div class="chat-row"><span class="speaker">Tom:</span> Good. I have a new job! <span class="hl">I'm working</span> at the bank now.</div>
-            <div class="chat-row"><span class="speaker">Sarah:</span> <span class="hl">Oh, wow!</span> That's great news!</div>
+            <div class="chat-row"><span class="speaker">Tom:</span> Hi, Sarah. <span class="hl">It's</span> Tom. Busy?</div>
+            <div class="chat-row"><span class="speaker">Sarah:</span> No, <span class="hl">I'm waiting</span> for the bus.</div>
+            <div class="chat-row"><span class="speaker">Tom:</span> <span class="hl">What</span> are you doing today?</div>
+            <div class="chat-row"><span class="speaker">Sarah:</span> <span class="hl">I'm going</span> to the mall.</div>
+            <div class="chat-row"><span class="speaker">Tom:</span> <span class="hl">Oh, wow!</span> Have fun!</div>
         </div>
     </div>
 
@@ -313,6 +333,9 @@
             const displayArea = document.getElementById('display-area');
             const contentSource = document.getElementById(id);
             
+            // Scroll to top when content changes
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
             if (contentSource) {
                 displayArea.innerHTML = contentSource.innerHTML;
             } else {
