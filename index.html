@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENG Class Review - Elegant Style</title>
+    <title>ENG Class Review - Clean Pink</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- การตั้งค่าสี Theme ชมพู (Soft Pink) --- */
+        /* --- Theme Settings --- */
         :root {
-            --primary-pink: #db2777;       /* สีหลัก (Pink 600) */
-            --soft-pink-bg: #fff0f5;       
-            --active-menu: #fce7f3;        
+            --primary-pink: #db2777;       /* สีหลัก */
+            --soft-pink-bg: #fff0f5;       /* พื้นหลังอ่อนๆ */
             --text-main: #333;
             --accent-border: #be185d;      
-            --highlight: #fdf2f8;          
-            --highlight-text: #9f1239;     
+            --highlight-bg: #fce7f3;       
+            --highlight-text: #9d174d;     
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Poppins', 'Sarabun', sans-serif;
-            background-color: #fff5f7; 
+            background-color: #fffbfd; /* พื้นหลังขาวอมชมพูจางมากๆ */
             color: var(--text-main);
             line-height: 1.6;
         }
 
-        /* --- ส่วนหัว (Header) สไตล์เรียบหรู (Elegant Minimal) --- */
+        /* --- Header --- */
         header {
-            background-color: #ffffff; /* พื้นหลังขาวสะอาด */
-            border-bottom: 1px solid rgba(219, 39, 119, 0.1); /* เส้นขอบบางมากๆ */
-            padding: 0 30px;
+            background-color: #fff;
+            border-bottom: 1px solid #f3f4f6;
+            padding: 0 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -39,66 +38,56 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* เงาจางๆ นุ่มนวล */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
         }
 
         .logo {
             font-weight: 700;
-            font-size: 1.3rem;
-            color: #222;
+            font-size: 1.2rem;
+            color: #444;
             display: flex;
             align-items: center;
             gap: 8px;
-            letter-spacing: 0.5px; /* เพิ่มระยะห่างตัวอักษรให้ดูแพง */
         }
         .logo span { color: var(--primary-pink); }
 
-        /* --- เมนู (Navigation) --- */
+        /* --- Navigation Menu (Rounded Blocks) --- */
         nav { overflow-x: auto; scrollbar-width: none; }
         nav::-webkit-scrollbar { display: none; }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px; /* เพิ่มระยะห่างระหว่างเมนู */
+            gap: 8px;
             padding: 0 10px;
         }
 
         nav a {
             text-decoration: none;
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 10px 0; /* ไม่ใส่ padding ด้านข้าง เพื่อให้ดูคลีน */
-            position: relative;
-            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 10px; /* ความมนแบบสี่เหลี่ยม (Rounded Rect) */
+            white-space: nowrap;
+            transition: all 0.2s ease;
         }
 
-        /* เอฟเฟกต์เส้นขีดล่างวิ่งจากตรงกลาง (Elegant Underline) */
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: var(--primary-pink);
-            transition: width 0.3s ease, left 0.3s ease;
-        }
-
-        /* เมื่อเอาเมาส์ชี้ หรือ เป็นเมนูที่เลือก */
-        nav a:hover,
-        nav a.active {
+        /* Hover Effect */
+        nav a:hover {
+            background-color: #fff0f5;
             color: var(--primary-pink);
         }
 
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-            left: 0;
+        /* Active State (ปุ่มที่เลือก) */
+        nav a.active {
+            background-color: var(--primary-pink); /* พื้นหลังสีชมพู */
+            color: white; /* ตัวหนังสือสีขาว */
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(219, 39, 119, 0.25); /* เงาสีชมพู */
         }
 
-        /* --- พื้นที่เนื้อหา (Content) --- */
+        /* --- Content Area --- */
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -110,14 +99,13 @@
             background-color: #fff;
             border-radius: 16px;
             padding: 50px;
-            box-shadow: 0 8px 24px rgba(219, 39, 119, 0.08);
-            border: 1px solid #fff0f5;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* เงาเบาๆ */
+            border: 1px solid #fdf2f8;
         }
 
-        /* ซ่อนเนื้อหาไว้ก่อน แล้วใช้ JS เรียกแสดง */
         .hidden-content { display: none; }
 
-        /* --- การจัดรูปแบบตัวอักษร --- */
+        /* --- Typography & Lists --- */
         h1.unit-title {
             font-size: 1.8rem;
             color: var(--primary-pink);
@@ -127,7 +115,7 @@
         p.subtitle { color: #888; font-size: 1rem; margin-bottom: 20px; }
         
         .divider {
-            border-bottom: 2px dashed #fecdd3;
+            border-bottom: 1px solid #eee;
             margin: 20px 0 30px 0;
         }
 
@@ -141,48 +129,52 @@
             border-left: 4px solid var(--accent-border);
         }
 
+        /* List Style (Simple Dot) */
         ul.list {
             list-style: none;
-            padding-left: 10px;
+            padding-left: 8px;
         }
         ul.list li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
         }
+        /* จุดกลมธรรมดาสบายตา */
         ul.list li::before {
-            content: "|"; /* ไอคอนหัวใจหน้าลิสต์ */
-            font-size: 0.8rem;
-            color: var(--primary-pink);
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: #db2777; /* สีชมพู */
+            border-radius: 50%;
             position: absolute;
             left: 0;
-            top: 4px;
+            top: 10px; /* จัดกึ่งกลางบรรทัด */
         }
 
-        /* กล่องไวยากรณ์ */
+        /* Grammar Box */
         .grammar-box {
-            background-color: #fdf2f8;
+            background-color: #fdf4f9;
             padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #f472b6;
+            border-radius: 8px;
+            border-left: 4px solid #db2777;
             margin: 15px 0;
             color: #831843;
             font-weight: 500;
         }
 
-        /* ไฮไลท์คำศัพท์ */
+        /* Highlights */
         .hl {
-            background-color: #ffe4e6;
+            background-color: var(--highlight-bg);
             color: var(--highlight-text);
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
         }
 
-        /* กล่องบทสนทนา */
+        /* Chat Box */
         .chat-box {
-            background-color: #fff;
-            border: 1px solid #fbcfe8;
+            background-color: #fafafa;
+            border: 1px solid #eee;
             border-radius: 12px;
             padding: 20px;
             margin-top: 15px;
@@ -193,7 +185,7 @@
         footer {
             text-align: center;
             padding: 40px;
-            color: #aaa;
+            color: #bbb;
             font-size: 0.8rem;
         }
     </style>
@@ -202,7 +194,7 @@
 
     <header>
         <div class="logo">
-            <span style="font-size:1.5rem;">📔</span> 
+            <span style="font-size:1.5rem;">📚</span> 
             <span>ENG</span> I
         </div>
         <nav>
