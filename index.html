@@ -3,323 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สรุปสอบ Units 7 & 9 (ฉบับสมบูรณ์)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>ENG Class Review - Elegant Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- การตั้งค่าสี Theme ชมพู (Soft Pink) --- */
+        :root {
+            --primary-pink: #db2777;       /* สีหลัก (Pink 600) */
+            --soft-pink-bg: #fff0f5;       
+            --active-menu: #fce7f3;        
+            --text-main: #333;
+            --accent-border: #be185d;      
+            --highlight: #fdf2f8;          
+            --highlight-text: #9f1239;     
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Poppins', 'Sarabun', sans-serif;
+            background-color: #fff5f7; 
+            color: var(--text-main);
             line-height: 1.6;
         }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            background-color: #d6eaf8;
-            padding: 20px;
-            border-radius: 10px;
-            border-bottom: 4px solid #3498db;
-            margin-bottom: 30px;
+
+        /* --- ส่วนหัว (Header) สไตล์เรียบหรู (Elegant Minimal) --- */
+        header {
+            background-color: #ffffff; /* พื้นหลังขาวสะอาด */
+            border-bottom: 1px solid rgba(219, 39, 119, 0.1); /* เส้นขอบบางมากๆ */
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* เงาจางๆ นุ่มนวล */
         }
-        h2 {
-            background-color: #2980b9;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            margin-top: 40px;
-            font-size: 1.4em;
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #222;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px; /* เพิ่มระยะห่างตัวอักษรให้ดูแพง */
         }
-        h3 {
-            color: #d35400;
-            border-left: 5px solid #d35400;
-            padding-left: 15px;
-            margin-top: 30px;
+        .logo span { color: var(--primary-pink); }
+
+        /* --- เมนู (Navigation) --- */
+        nav { overflow-x: auto; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px; /* เพิ่มระยะห่างระหว่างเมนู */
+            padding: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 10px 0; /* ไม่ใส่ padding ด้านข้าง เพื่อให้ดูคลีน */
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        /* เอฟเฟกต์เส้นขีดล่างวิ่งจากตรงกลาง (Elegant Underline) */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-pink);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        /* เมื่อเอาเมาส์ชี้ หรือ เป็นเมนูที่เลือก */
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-pink);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* --- พื้นที่เนื้อหา (Content) --- */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            min-height: 80vh;
+        }
+
+        .content-card {
             background-color: #fff;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 8px 24px rgba(219, 39, 119, 0.08);
+            border: 1px solid #fff0f5;
         }
-        ul, ol {
-            background-color: white;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-top: 10px;
+
+        /* ซ่อนเนื้อหาไว้ก่อน แล้วใช้ JS เรียกแสดง */
+        .hidden-content { display: none; }
+
+        /* --- การจัดรูปแบบตัวอักษร --- */
+        h1.unit-title {
+            font-size: 1.8rem;
+            color: var(--primary-pink);
+            margin-bottom: 10px;
         }
-        li {
-            margin-bottom: 8px;
+
+        p.subtitle { color: #888; font-size: 1rem; margin-bottom: 20px; }
+        
+        .divider {
+            border-bottom: 2px dashed #fecdd3;
+            margin: 20px 0 30px 0;
         }
-        .highlight {
-            font-weight: bold;
-            color: #c0392b;
-            background-color: #fdedec;
-            padding: 0 6px;
-            border-radius: 4px;
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #444;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent-border);
         }
-        .translation {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-left: 8px;
-        }
-        /* Style สำหรับส่วน Quiz */
-        .quiz-section {
-            background-color: #e8f8f5;
-            border: 2px solid #1abc9c;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 50px;
-        }
-        .quiz-header {
-            text-align: center;
-            color: #16a085;
-            margin-top: 0;
-            border-bottom: 2px dashed #16a085;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-        .quiz-question {
-            font-weight: bold;
-            margin-top: 20px;
-            color: #0e6251;
-            font-size: 1.1em;
-        }
-        .options {
-            list-style-type: none; /* เอาจุด bullet ออกสำหรับตัวเลือก */
+
+        ul.list {
+            list-style: none;
             padding-left: 10px;
         }
-        .options li {
-            background-color: rgba(255,255,255,0.6);
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-bottom: 5px;
+        ul.list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
         }
-        /* ปุ่มเฉลย */
-        .btn-toggle {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.1em;
-            font-weight: bold;
-            display: block;
-            margin: 30px auto;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background-color 0.3s;
+        ul.list li::before {
+            content: "|"; /* ไอคอนหัวใจหน้าลิสต์ */
+            font-size: 0.8rem;
+            color: var(--primary-pink);
+            position: absolute;
+            left: 0;
+            top: 4px;
         }
-        .btn-toggle:hover {
-            background-color: #c0392b;
-        }
-        .answer-key {
-            background-color: #34495e;
-            color: white;
-            padding: 25px;
+
+        /* กล่องไวยากรณ์ */
+        .grammar-box {
+            background-color: #fdf2f8;
+            padding: 15px 20px;
             border-radius: 10px;
-            margin-top: 20px;
-            display: none; /* ซ่อนไว้ก่อน */
+            border-left: 4px solid #f472b6;
+            margin: 15px 0;
+            color: #831843;
+            font-weight: 500;
         }
-        .answer-key ol {
-            background-color: transparent;
-            box-shadow: none;
-            color: #ecf0f1;
+
+        /* ไฮไลท์คำศัพท์ */
+        .hl {
+            background-color: #ffe4e6;
+            color: var(--highlight-text);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* กล่องบทสนทนา */
+        .chat-box {
+            background-color: #fff;
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .chat-row { margin-bottom: 8px; }
+        .speaker { font-weight: 700; color: var(--primary-pink); margin-right: 8px; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #aaa;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <h1>📚 สรุป Units 7 & 9 </h1>
-    <p style="text-align: center; color: #555;">รวบรวม Vocab, Grammar, Dialogue, Reading และแบบฝึกหัด</p>
-
-    <h2>Unit 7: Now is Good</h2>
-
-    <h3>1. Vocab: กิจกรรมในบ้าน (Activities)</h3>
-    <ul>
-        <li><span class="highlight">clean</span> the kitchen <span class="translation">(ทำความสะอาดครัว)</span></li>
-        <li><span class="highlight">cook</span> dinner / breakfast <span class="translation">(ทำอาหารเย็น/เช้า)</span></li>
-        <li><span class="highlight">wash</span> my hair <span class="translation">(สระผม)</span></li>
-        <li><span class="highlight">brush</span> my teeth <span class="translation">(แปรงฟัน)</span></li>
-        <li><span class="highlight">do</span> the dishes <span class="translation">(ล้างจาน)</span></li>
-        <li><span class="highlight">take</span> a bath / a shower <span class="translation">(อาบน้ำ)</span></li>
-        <li><span class="highlight">do</span> my homework <span class="translation">(ทำการบ้าน)</span></li>
-        <li><span class="highlight">help</span> my daughters/son <span class="translation">(ช่วยลูก)</span></li>
-    </ul>
-
-    <h3>2. Vocab: การเดินทาง (Transportation)</h3>
-    <ul>
-        <li><span class="highlight">take</span> the bus / train / subway <span class="translation">(ขึ้นรถเมล์/รถไฟ...)</span></li>
-        <li><span class="highlight">ride</span> your/my bike <span class="translation">(ขี่จักรยาน)</span></li>
-        <li><span class="highlight">drive</span> <span class="translation">(ขับรถ)</span></li>
-        <li><span class="highlight">walk</span> <span class="translation">(เดิน)</span></li>
-        <li><span class="highlight">carry</span> a bag <span class="translation">(ถือกระเป๋า)</span></li>
-        <li><span class="highlight">wait</span> (at the bus stop) <span class="translation">(รอที่ป้ายรถ)</span></li>
-    </ul>
-
-    <h3>3. Grammar: Present Continuous (สิ่งที่กำลังทำ)</h3>
-    <ul>
-        <li>I <span class="highlight">'m cooking</span> breakfast right now.</li>
-        <li>Stevie <span class="highlight">isn't drinking</span> his milk.</li>
-        <li><strong>Question:</strong> <span class="highlight">Are</span> you <span class="highlight">going</span> to work?</li>
-        <li><strong>Question:</strong> <span class="highlight">Why</span> is he <span class="highlight">carrying</span> a plant?</li>
-        <li><em>Example:</em> "I'm <span class="highlight">taking the bus</span> because I'm <span class="highlight">carrying</span> a big plant."</li>
-    </ul>
-
-    <h3>4. Dialogue & Reading</h3>
-    <ul>
-        <li><strong>Phone Greeting:</strong> "Hi, Ariana. <span class="highlight">It's</span> David." <span class="translation">(สวัสดี นี่เดวิดนะ)</span></li>
-        <li><strong>Check Time:</strong> "Is this a <span class="highlight">good time</span> to call?"</li>
-        <li><strong>Rejecting:</strong> "Sorry... This <span class="highlight">isn't a good time</span> to talk."</li>
-        <li><strong>Reacting:</strong> "Oh, wow!" (Good), "Oh." (Normal), "Oh, no!" (Bad)</li>
-        <li><strong>Writing (Too):</strong> "They're busy, <span class="highlight">too</span>." (วางท้ายประโยค)</li>
-        <li><strong>Writing (Also):</strong> "<span class="highlight">Also</span>, the children are eating." (วางต้นประโยค)</li>
-    </ul>
-
-    <h2>Unit 9: Places to Go</h2>
-
-    <h3>1. Vocab: ท่องเที่ยว & การจัดการ (Travel)</h3>
-    <ul>
-        <li><strong>Words:</strong> ticket, tour, vacation, boat, plane, farm, ranch</li>
-        <li><span class="highlight">stay</span> in a hotel <span class="translation">(พักโรงแรม)</span></li>
-        <li><span class="highlight">arrive</span> at the airport <span class="translation">(ถึงสนามบิน)</span></li>
-        <li><span class="highlight">check in</span> at the airport <span class="translation">(เช็คอิน)</span></li>
-        <li><span class="highlight">leave</span> your house <span class="translation">(ออกจากบ้าน)</span></li>
-        <li><span class="highlight">buy</span> tickets online <span class="translation">(ซื้อตั๋วออนไลน์)</span></li>
-        <li><em>Example:</em> "San Diego, here I come! I have my <span class="highlight">ticket</span> and my <span class="highlight">seat</span>."</li>
-    </ul>
-
-    <h3>2. Grammar: This/These & Verb+to</h3>
-    <ul>
-        <li><span class="highlight">This</span> ticket (เอกพจน์/ใกล้) vs <span class="highlight">These</span> birds (พหูพจน์/ใกล้)</li>
-        <li>I <span class="highlight">like to</span> fly. <span class="translation">(ชอบที่จะ...)</span></li>
-        <li>We <span class="highlight">want to</span> leave on Friday. <span class="translation">(อยากที่จะ...)</span></li>
-        <li>You <span class="highlight">need to</span> check in. <span class="translation">(จำเป็นต้อง...)</span></li>
-        <li>He <span class="highlight">has to</span> buy tickets. <span class="translation">(ต้องทำ...)</span></li>
-        <li><strong>Important:</strong> ตามด้วย Verb ช่อง 1 เสมอ (ห้ามเติม -ing, ห้ามเติม s)</li>
-    </ul>
-
-    <h3>3. Dialogue & Reading</h3>
-    <ul>
-        <li><strong>Store Question:</strong> "How much is that?" / "Where are the travel guides?"</li>
-        <li><strong>Store Promo:</strong> "They're <span class="highlight">two for $15</span>." <span class="translation">(2 อัน 15 ดอลลาร์)</span></li>
-        <li><strong>Repeat:</strong> "Sorry, can you <span class="highlight">say that again</span>?"</li>
-        <li><strong>Imperatives (คำแนะนำ):</strong> ขึ้นต้นด้วยกริยาเลย
+    <header>
+        <div class="logo">
+            <span style="font-size:1.5rem;">📔</span> 
+            <span>ENG</span> I
+        </div>
+        <nav>
             <ul>
-                <li><span class="highlight">Walk</span> to the top of the island.</li>
-                <li><span class="highlight">Don't take</span> a tour.</li>
-                <li><span class="highlight">Don't forget</span> your camera.</li>
+                <li><a href="#" class="active" onclick="showContent('unit7', this)">Unit 7</a></li>
+                <li><a href="#" onclick="showContent('unit9', this)">Unit 9</a></li>
+                <li><a href="#" onclick="showContent('unit79', this)">Unit 7,9</a></li>
+                <li><a href="#" onclick="showContent('quiz79', this)">Quiz 7,9</a></li>
+                <li><a href="#" onclick="showContent('midterm', this)">Midterm</a></li>
+                <li><a href="#" onclick="showContent('unit11', this)">Unit 11</a></li>
+                <li><a href="#" onclick="showContent('unit12', this)">Unit 12</a></li>
+                <li><a href="#" onclick="showContent('quiz1112', this)">Quiz 11,12</a></li>
+                <li><a href="#" onclick="showContent('final', this)">Final</a></li>
+                <li><a href="#" onclick="showContent('summary', this)">Sum</a></li>
             </ul>
-        </li>
-    </ul>
+        </nav>
+    </header>
 
-    <div class="quiz-section">
-        <h2 class="quiz-header">📝 Practice Quiz (10 ข้อ)</h2>
+    <div class="container">
+        <div class="content-card" id="display-area">
+            </div>
+    </div>
+
+    <div id="unit7" class="hidden-content">
+        <h1 class="unit-title">Unit 7: Now is Good</h1>
+        <p class="subtitle">สิ่งที่กำลังทำอยู่ (Present Continuous), กิจกรรมในบ้าน, และการเดินทาง</p>
+        <div class="divider"></div>
+
+        <h2>1. Vocabulary (คำศัพท์น่ารู้)</h2>
+        <p><strong>Activities around the house (กิจกรรมในบ้าน)</strong></p>
+        <ul class="list">
+            <li><span class="hl">clean the kitchen</span> : ทำความสะอาดห้องครัว</li>
+            <li><span class="hl">cook dinner</span> : ทำอาหารเย็น</li>
+            <li><span class="hl">do the dishes</span> : ล้างจาน</li>
+            <li><span class="hl">wash my hair</span> : สระผม</li>
+            <li><span class="hl">brush my teeth</span> : แปรงฟัน</li>
+            <li><span class="hl">take a shower</span> : อาบน้ำ (ฝักบัว)</li>
+        </ul>
         
-        <div class="quiz-question">1. Complete the sentence: "I am ______ the dishes in the kitchen."</div>
-        <ul class="options">
-            <li>a) doing</li>
-            <li>b) making</li>
-            <li>c) taking</li>
+        <p style="margin-top:20px;"><strong>Transportation (การเดินทาง)</strong></p>
+        <ul class="list">
+            <li><span class="hl">take the bus / train / subway</span> : ขึ้นรถเมล์ / รถไฟ / รถไฟใต้ดิน</li>
+            <li><span class="hl">ride a bike</span> : ขี่จักรยาน</li>
+            <li><span class="hl">drive</span> : ขับรถ</li>
+            <li><span class="hl">walk</span> : เดิน</li>
+            <li><span class="hl">wait at the bus stop</span> : รอที่ป้ายรถเมล์</li>
+            <li><span class="hl">carry a bag</span> : ถือกระเป๋า</li>
         </ul>
 
-        <div class="quiz-question">2. Choose the correct question: "______ you waiting for the bus?"</div>
-        <ul class="options">
-            <li>a) Do</li>
-            <li>b) Is</li>
-            <li>c) Are</li>
+        <h2>2. Grammar: Present Continuous</h2>
+        <p>ใช้พูดถึงสิ่งที่<strong>กำลังเกิดขึ้นในขณะนี้</strong> (Right now) หรือช่วงนี้ (Around now)</p>
+        
+        <div class="grammar-box">
+            Structure: Subject + is / am / are + Verb-ing
+        </div>
+
+        <ul class="list">
+            <li>I <span class="hl">'m cooking</span> breakfast right now. (ฉันกำลังทำอาหารเช้าอยู่ตอนนี้)</li>
+            <li>She <span class="hl">isn't drinking</span> milk. (เธอไม่ได้กำลังดื่มนม)</li>
+            <li>They <span class="hl">are learning</span> a lot this year. (พวกเขากำลังเรียนรู้เยอะมากปีนี้)</li>
         </ul>
 
-        <div class="quiz-question">3. Writing: "She is cooking dinner. The children are helping, ______."</div>
-        <ul class="options">
-            <li>a) also</li>
-            <li>b) too</li>
-            <li>c) but</li>
+        <p><strong>Questions (ประโยคคำถาม)</strong></p>
+        <ul class="list">
+            <li><strong>Q:</strong> <span class="hl">Are</span> you going to work? (คุณกำลังจะไปทำงานใช่ไหม?) <br> <strong>A:</strong> Yes, I am. / No, I'm not.</li>
+            <li><strong>Q:</strong> <span class="hl">What</span> are you doing? (คุณกำลังทำอะไร?)</li>
+            <li><strong>Q:</strong> <span class="hl">Why</span> is he carrying a plant? (ทำไมเขาถึงถือต้นไม้มา?)</li>
         </ul>
 
-        <div class="quiz-question">4. Choose the correct word: "We need to ______ at the airport 2 hours before the flight."</div>
-        <ul class="options">
-            <li>a) check in</li>
-            <li>b) stay</li>
-            <li>c) leave</li>
+        <h2>3. Functional: Phone & News</h2>
+        <p><strong>Phone Calls (การคุยโทรศัพท์)</strong></p>
+        <ul class="list">
+            <li><strong>Greeting:</strong> "Hi, [Name]. <span class="hl">It's</span> [Your Name]." (สวัสดี นี่...พูดสายนะ)</li>
+            <li><strong>Checking time:</strong> "Is this a good time to call?" (สะดวกคุยไหม?)</li>
+            <li><strong>Asking update:</strong> "What are you doing these days?" (ช่วงนี้ทำอะไรอยู่บ้าง?)</li>
+        </ul>
+        
+        <p><strong>Reacting to News (การตอบรับข่าวสาร)</strong></p>
+        <ul class="list">
+            <li>😃 Good news: <strong>"Oh, wow!"</strong> (โอ้ว้าว!) - เช่น ได้งานใหม่</li>
+            <li>😐 Ordinary news: <strong>"Oh."</strong> (อ้อ หรอ) - เช่น ยุ่งอยู่</li>
+            <li>😥 Bad news: <strong>"Oh, no!"</strong> (โอ้ ไม่นะ) - เช่น ของแพงมาก</li>
         </ul>
 
-        <div class="quiz-question">5. Grammar: "I don't like ______ pictures." (ในรูปมีหลายภาพ)</div>
-        <ul class="options">
-            <li>a) this</li>
-            <li>b) that</li>
-            <li>c) these</li>
-        </ul>
-
-        <div class="quiz-question">6. Grammar: "She ______ buy a ticket online."</div>
-        <ul class="options">
-            <li>a) has to</li>
-            <li>b) has</li>
-            <li>c) have to</li>
-        </ul>
-
-        <div class="quiz-question">7. Vocabulary: "We are sleeping in a hotel on our ______."</div>
-        <ul class="options">
-            <li>a) ticket</li>
-            <li>b) vacation</li>
-            <li>c) boat</li>
-        </ul>
-
-        <div class="quiz-question">8. Phone Call: If someone asks "Is this a good time to call?", you can answer (if busy):</div>
-        <ul class="options">
-            <li>a) "Yes, I'm cooking."</li>
-            <li>b) "No, I'm having dinner."</li>
-            <li>c) "Hi, It's David."</li>
-        </ul>
-
-        <div class="quiz-question">9. In a store: You didn't hear the price. What do you say?</div>
-        <ul class="options">
-            <li>a) "How much is that?"</li>
-            <li>b) "Sorry, can you say that again?"</li>
-            <li>c) "Where is the restroom?"</li>
-        </ul>
-
-        <div class="quiz-question">10. Reading (Advice): Which sentence gives advice? (Imperative)</div>
-        <ul class="options">
-            <li>a) "You can see the ocean."</li>
-            <li>b) "Don't forget your camera."</li>
-            <li>c) "I like to walk."</li>
-        </ul>
+        <h2>4. Simulation (จำลองสถานการณ์)</h2>
+        <p>ตัวอย่างบทสนทนาทางโทรศัพท์</p>
+        <div class="chat-box">
+            <div class="chat-row"><span class="speaker">Tom:</span> Hi, Sarah. <span class="hl">It's</span> Tom. <span class="hl">Is this a good time to call?</span></div>
+            <div class="chat-row"><span class="speaker">Sarah:</span> Um, actually, <span class="hl">I'm cooking</span> dinner right now.</div>
+            <div class="chat-row"><span class="speaker">Tom:</span> Oh, sorry. <span class="hl">Are</span> you busy?</div>
+            <div class="chat-row"><span class="speaker">Sarah:</span> A little. <span class="hl">I'm making</span> pasta. But it's okay. <span class="hl">How's it going?</span></div>
+            <div class="chat-row"><span class="speaker">Tom:</span> Good. I have a new job! <span class="hl">I'm working</span> at the bank now.</div>
+            <div class="chat-row"><span class="speaker">Sarah:</span> <span class="hl">Oh, wow!</span> That's great news!</div>
+        </div>
     </div>
 
-    <button class="btn-toggle" onclick="toggleAnswer()">เฉลยคำตอบ (Click to Show Answers)</button>
-
-    <div id="answerKey" class="answer-key">
-        <h3 style="color: #f1c40f; border-left: none; background: none; margin-top: 0; text-align: center;">✅ เฉลย (Answer Key)</h3>
-        <ol>
-            <li><strong>a) doing</strong> (สำนวน do the dishes = ล้างจาน)</li>
-            <li><strong>c) Are</strong> (ประธาน You ใช้ Are ใน Present Continuous)</li>
-            <li><strong>b) too</strong> (Too วางท้ายประโยค แปลว่า "ด้วย/เหมือนกัน")</li>
-            <li><strong>a) check in</strong> (ต้อง check in ที่สนามบินก่อนขึ้นเครื่อง)</li>
-            <li><strong>c) these</strong> (Pictures มี s เป็นพหูพจน์และอยู่ใกล้ ใช้ these)</li>
-            <li><strong>a) has to</strong> (She เป็นเอกพจน์ ใช้ has to)</li>
-            <li><strong>b) vacation</strong> (ไปพักโรงแรมในช่วง vacation วันหยุด)</li>
-            <li><strong>b) "No, I'm having dinner."</strong> (ปฏิเสธอย่างสุภาพว่าไม่ว่าง)</li>
-            <li><strong>b) "Sorry, can you say that again?"</strong> (ขอให้พูดซ้ำ)</li>
-            <li><strong>b) "Don't forget your camera."</strong> (ประโยคคำสั่ง Don't + V1)</li>
-        </ol>
+    <div id="default-placeholder" class="hidden-content">
+        <h1 class="unit-title" id="ph-title">Topic</h1>
+        <p class="subtitle">Waiting for content...</p>
+        <div class="divider"></div>
+        <div style="text-align:center; padding: 60px;">
+            <span style="font-size:3rem; opacity:0.5;">⏳</span>
+            <p style="color:#999; margin-top:15px;">เนื้อหาของส่วนนี้จะถูกเพิ่มเข้ามาภายหลังครับ</p>
+        </div>
     </div>
 
-    <div style="text-align: center; margin-top: 50px; padding-bottom: 20px; color: #7f8c8d;">
-        Good luck with your exam! <br>
-    </div>
+    <footer>
+        Designed for Easy Review | English Class 1
+    </footer>
 
     <script>
-        function toggleAnswer() {
-            var x = document.getElementById("answerKey");
-            if (x.style.display === "block") {
-                x.style.display = "none";
+        function showContent(id, element) {
+            document.querySelectorAll('nav a').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+
+            const displayArea = document.getElementById('display-area');
+            const contentSource = document.getElementById(id);
+            
+            if (contentSource) {
+                displayArea.innerHTML = contentSource.innerHTML;
             } else {
-                x.style.display = "block";
-                x.scrollIntoView({behavior: "smooth"});
+                const placeholder = document.getElementById('default-placeholder');
+                displayArea.innerHTML = placeholder.innerHTML;
+                displayArea.querySelector('h1').innerText = element.innerText;
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const displayArea = document.getElementById('display-area');
+            const unit7Source = document.getElementById('unit7');
+            displayArea.innerHTML = unit7Source.innerHTML;
+        });
     </script>
 
 </body>
